@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Database;
+using WebApp.Dtos.Stock;
 using WebApp.Mappers;
 
 namespace WebApp.Controllers;
@@ -35,5 +36,15 @@ public class StockController : ControllerBase
             return NotFound();
         
         return Ok(stock.ToStockDto());
+    }
+
+    [HttpPost("")]
+    public IActionResult Create([FromBody] CreateStockRequestDto stockDto)
+    {
+        var stockModel = stockDto.ToStockFromCreateDto();
+        _context.Stock.Add(stockModel);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(GetById), new { id = stockModel.Id }, stockModel.ToStockDto());
     }
 }
