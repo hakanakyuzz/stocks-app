@@ -32,6 +32,7 @@ public class StockController : ControllerBase
     {
         var stock = _context.Stock
             .FirstOrDefault(stock => stock.Id == id);
+        
         if (stock == null)
             return NotFound();
         
@@ -42,6 +43,7 @@ public class StockController : ControllerBase
     public IActionResult Create([FromBody] CreateStockRequestDto stockDto)
     {
         var stockModel = stockDto.ToStockFromCreateDto();
+        
         _context.Stock.Add(stockModel);
         _context.SaveChanges();
 
@@ -64,6 +66,21 @@ public class StockController : ControllerBase
         stockModel.MarketCap = stockDto.MarketCap;
 
         _context.SaveChanges();
+        
         return Ok(stockModel.ToStockDto());
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete([FromRoute] int id)
+    {
+        var stockModel = _context.Stock.FirstOrDefault(stock => stock.Id == id);
+        
+        if (stockModel == null)
+            return NotFound();
+        
+        _context.Stock.Remove(stockModel);
+        _context.SaveChanges();
+        
+        return NoContent();
     }
 }

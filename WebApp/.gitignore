@@ -25,6 +25,7 @@ GeneratedFiles/
 packages/
 
 # Database files
+Data/
 *.mdf
 *.ldf
 *.db
