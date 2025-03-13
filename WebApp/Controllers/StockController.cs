@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApp.Database;
 
 namespace WebApp.Controllers;
@@ -18,7 +19,9 @@ public class StockController : ControllerBase
     [HttpGet("")]
     public IActionResult GetAll()
     {
-        var stocks = _context.Stock.ToList();
+        var stocks = _context.Stock
+            .Include(stock => stock.Comments)
+            .ToList();
         
         return Ok(stocks);
     }
@@ -26,7 +29,9 @@ public class StockController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetById([FromRoute] int id)
     {
-        var stock = _context.Stock.Find(id);
+        var stock = _context.Stock
+            .Include(stock => stock.Comments)
+            .FirstOrDefault(stock => stock.Id == id);
         if (stock == null)
             return NotFound();
         
