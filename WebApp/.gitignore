@@ -28,6 +28,8 @@ packages/
 *.mdf
 *.ldf
 *.db
+*.db-shm
+*.db-wal
 
 # Entity Framework migrations
 *.Designer.cs

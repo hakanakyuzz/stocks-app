@@ -8,16 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Dtos/Stock/CreateStockRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/.gitignore" afterDir="false" />
+    <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="post controller added, dto magic handled to save data and give response to the caller only the required information">
+      <change afterPath="$PROJECT_DIR$/WebApp/Dtos/Stock/UpdateStockRequestDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Data/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Data/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Mappers/StockMappers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Mappers/StockMappers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/WebApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +113,7 @@
       <workItem from="1741769651795" duration="12205000" />
       <workItem from="1741847830982" duration="2904000" />
       <workItem from="1741850939095" duration="9361000" />
-      <workItem from="1741865097581" duration="5300000" />
+      <workItem from="1741865097581" duration="6315000" />
     </task>
     <task id="LOCAL-00001" summary="comments added">
       <option name="closed" value="true" />
@@ -137,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741864362504</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="post controller added, dto magic handled to save data and give response to the caller only the required information">
+      <option name="closed" value="true" />
+      <created>1741870479677</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741870479677</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +151,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="comments added" />
     <MESSAGE value="Stock Dto handled for getting all stocks and getting a stock by id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stock Dto handled for getting all stocks and getting a stock by id" />
+    <MESSAGE value="post controller added, dto magic handled to save data and give response to the caller only the required information" />
+    <option name="LAST_COMMIT_MESSAGE" value="post controller added, dto magic handled to save data and give response to the caller only the required information" />
   </component>
 </project>
