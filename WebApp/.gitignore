@@ -1,0 +1,57 @@
+# Build output
+bin/
+obj/
+
+# Rider/JetBrains settings
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+GeneratedFiles/
+
+# Logs and debug files
+*.log
+*.tlog
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Database files
+*.mdf
+*.ldf
+*.db
+
+# Entity Framework migrations
+*.Designer.cs
+*.edmx
+*.edmx.diagram
+
+# Temporary files
+*.tmp
+*.cache
+*.bak
+
+# Resharper files
+*.DotSettings.user
+
+# Environmental files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*
+
+# MacOS system files
+.DS_Store
+
+# Appsettings.json
+appsettings.json
+appsettings.Development.json
