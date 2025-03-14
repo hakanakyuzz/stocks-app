@@ -9,6 +9,6 @@ public interface IStockRepository
     // FirstOrDefault can be null
     Task<Stock?> GetByIdAsync(int id);
     Task<Stock> CreateAsync(Stock stockModel);
-    Task<Stock?> UpdateAsync(int id, UpdateStockRequestDto stockDto);
+    Task<Stock?> UpdateAsync(int id, UpdateStockDto stockDto);
     Task<Stock?> DeleteAsync(int id);
 }

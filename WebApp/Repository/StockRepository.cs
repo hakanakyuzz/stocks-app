@@ -37,7 +37,7 @@ public class StockRepository : IStockRepository
         return stockModel;
     }
 
-    public async Task<Stock?> UpdateAsync(int id, UpdateStockRequestDto stockDto)
+    public async Task<Stock?> UpdateAsync(int id, UpdateStockDto stockDto)
     {
         var stockModel = await _context.Stock.FirstOrDefaultAsync(stock => stock.Id == id);
         

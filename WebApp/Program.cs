@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 
 // When the app needs IStockRepository, create a new instance of StockRepository, and reuse the same instance for the lifetime of the HTTP request.
 builder.Services.AddScoped<IStockRepository, StockRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 var app = builder.Build();
 
