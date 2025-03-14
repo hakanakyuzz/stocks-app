@@ -10,7 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +114,8 @@
       <workItem from="1741850939095" duration="9361000" />
       <workItem from="1741865097581" duration="7055000" />
       <workItem from="1741872387793" duration="281000" />
-      <workItem from="1741873032649" duration="1500000" />
+      <workItem from="1741873032649" duration="3222000" />
+      <workItem from="1741876292105" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="comments added">
       <option name="closed" value="true" />
@@ -149,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741871826101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="delete stock functionality added">
+      <option name="closed" value="true" />
+      <created>1741874584433</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741874584433</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +171,7 @@
     <MESSAGE value="Stock Dto handled for getting all stocks and getting a stock by id" />
     <MESSAGE value="post controller added, dto magic handled to save data and give response to the caller only the required information" />
     <MESSAGE value="stock update functionality added with new dto called UpdateStockRequestDto" />
-    <option name="LAST_COMMIT_MESSAGE" value="stock update functionality added with new dto called UpdateStockRequestDto" />
+    <MESSAGE value="delete stock functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete stock functionality added" />
   </component>
 </project>
