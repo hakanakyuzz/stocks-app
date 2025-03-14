@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using WebApp.Dtos.Comment;
 using WebApp.Interfaces;
 using WebApp.Mappers;
-using WebApp.Models;
 
 namespace WebApp.Controllers;
 
@@ -12,10 +11,18 @@ namespace WebApp.Controllers;
 public class CommentController : ControllerBase
 {
     private readonly ICommentRepository _repository;
+    private readonly IStockRepository _stockRepository;
 
-    public CommentController(ICommentRepository repository)
+    // The controller only knows about IStockRepository - not the implementation
+    // The controller doesn't care if the repository uses EF Core or MongoDB
+    // The controller just expects the repository to return the correct data
+    public CommentController(ICommentRepository repository, IStockRepository stockRepository)
     {
+        // _repository is an instance of a class that implements the Repository Pattern (IStockRepository)
+        // _repository is a wrapper around _context that adds an extra layer of abstraction
+        
         _repository = repository;
+        _stockRepository = stockRepository;
     }
 
     [HttpGet("")]
@@ -28,7 +35,7 @@ public class CommentController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
         var comment = await _repository.GetByIdAsync(id);
         
@@ -38,10 +45,13 @@ public class CommentController : ControllerBase
         return Ok(comment.ToCommentDto());
     }
 
-    [HttpPost("")]
-    public async Task<IActionResult> Create(CreateCommentDto commentDto)
+    [HttpPost("{stockId}")]
+    public async Task<IActionResult> Create([FromRoute] int stockId, CreateCommentDto commentDto)
     {
-        var commentModel = commentDto.ToCommentFromDto();
+        if (!await _stockRepository.StockExists(stockId))
+            return NotFound();
+        
+        var commentModel = commentDto.ToCommentFromDto(stockId);
         await _repository.CreateAsync(commentModel);
         
         return CreatedAtAction(nameof(GetById), new { id = commentModel.Id }, commentModel.ToCommentDto());
@@ -59,7 +69,7 @@ public class CommentController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var commentModel = await _repository.DeleteAsync(id);
         

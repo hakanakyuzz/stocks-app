@@ -1,0 +1,10 @@
+    // Aspect	                _context	                             _repository 
+    // ----------------------------------------------------------------------------------
+    // Purpose :	            Directly manages the database      ----  Abstracts data access from the controller
+    // Location :	            Part of the data layer             ----  Part of the business layer
+    // Coupling	:               Tightly coupled to EF Core         ----  Loosely coupled (can be swapped out)
+    // Abstraction Level :	    Low (direct database calls)        ----  High (hides database details)
+    // Testability :        	Harder to mock/test	               ----  Easy to mock/test
+    // State Tracking :	        Tracks object state                ----	 No state tracking
+    // Business Logic :	        No	                               ----  Yes (if needed)
+    // Direct SQL Generation :	Yes                                ----  No (delegates to _context)

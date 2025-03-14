@@ -2,10 +2,6 @@
 bin/
 obj/
 
-# Rider/JetBrains settings
-.idea/
-.idea/*/workspace.xml
-
 # User-specific files
 *.suo
 *.user

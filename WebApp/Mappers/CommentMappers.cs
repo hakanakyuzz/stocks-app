@@ -17,14 +17,13 @@ public static class CommentMappers
         };
     }
 
-    public static Comment ToCommentFromDto(this CreateCommentDto commentDto)
+    public static Comment ToCommentFromDto(this CreateCommentDto commentDto, int stockId)
     {
         return new Comment
         {
             Title = commentDto.Title,
             Content = commentDto.Content,
-            CreatedOn = commentDto.CreatedOn,
-            StockId = commentDto.StockId,
+            StockId = stockId,
         };
     }
 }
