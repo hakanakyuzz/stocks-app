@@ -9,10 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApp/note" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/CommentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/CommentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Repository/CommentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/CommentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Comment/CreateCommentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Comment/CreateCommentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Comment/UpdateCommentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Comment/UpdateCommentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Stock/CreateStockDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Stock/CreateStockDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Stock/UpdateStockDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Stock/UpdateStockDto.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +127,7 @@
       <workItem from="1741873032649" duration="3222000" />
       <workItem from="1741876292105" duration="18000" />
       <workItem from="1741932645888" duration="23122000" />
-      <workItem from="1742033666774" duration="5475000" />
+      <workItem from="1742033666774" duration="8460000" />
     </task>
     <task id="LOCAL-00001" summary="comments added">
       <option name="closed" value="true" />
