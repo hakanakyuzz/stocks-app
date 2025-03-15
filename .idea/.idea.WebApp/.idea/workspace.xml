@@ -8,13 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApp/Utils/QueryObject.cs" afterDir="false" />
+    <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="Filtering by query parameters handled">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Interfaces/IStockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Interfaces/IStockRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Utils/QueryObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Utils/QueryObject.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,7 @@
       <workItem from="1741873032649" duration="3222000" />
       <workItem from="1741876292105" duration="18000" />
       <workItem from="1741932645888" duration="23122000" />
-      <workItem from="1742033666774" duration="13071000" />
+      <workItem from="1742033666774" duration="14042000" />
     </task>
     <task id="LOCAL-00001" summary="comments added">
       <option name="closed" value="true" />
@@ -212,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741960599974</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Filtering by query parameters handled">
+      <option name="closed" value="true" />
+      <created>1742047068187</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742047068187</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +248,7 @@
     <MESSAGE value="comments handled" />
     <MESSAGE value="comments included with the stocks" />
     <MESSAGE value="create comment controller updated for the sake of the relation between the comment and the stock" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Filtering by query parameters handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filtering by query parameters handled" />
   </component>
 </project>
