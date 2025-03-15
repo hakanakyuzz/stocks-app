@@ -9,13 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="856ef31b-2f5a-45bc-b171-6d7452036589" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WebApp/Utils/QueryObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/CommentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/CommentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/StockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Comment/CreateCommentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Comment/CreateCommentDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Comment/UpdateCommentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Comment/UpdateCommentDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Stock/CreateStockDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Stock/CreateStockDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Stock/UpdateStockDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Stock/UpdateStockDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Interfaces/IStockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Interfaces/IStockRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +37,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Dtos/Comment/UpdateCommentDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Dtos/Comment/UpdateCommentDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Dtos/Comment/UpdateCommentDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Dtos/Comment/UpdateCommentDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Repository/CommentRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/36a06c6e31673b0103562688e60e146cfa4ed251073955737d752394237f33/DbContextOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b21fc3f8a3abb5d25f06c622276fbec0fd3932f169cc6af520bf5abc6a46b4/DbSet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6c773cb2ce7bb1e0bdf7babdf04d39782cd1453c5f29334705bde7413ca66fe/Queryable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a0b45f29f34f594814a7b1fbc25fe5ef3c18257956ed4f4fbfa68717db58/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e096e6f12c5d6b49356bc34ff1ea08738f910c0929c9d717c9cba7f44288/EntityFrameworkQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -127,7 +122,7 @@
       <workItem from="1741873032649" duration="3222000" />
       <workItem from="1741876292105" duration="18000" />
       <workItem from="1741932645888" duration="23122000" />
-      <workItem from="1742033666774" duration="8460000" />
+      <workItem from="1742033666774" duration="13071000" />
     </task>
     <task id="LOCAL-00001" summary="comments added">
       <option name="closed" value="true" />

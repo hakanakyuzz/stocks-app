@@ -3,6 +3,7 @@ using WebApp.Database;
 using WebApp.Dtos.Stock;
 using WebApp.Interfaces;
 using WebApp.Models;
+using WebApp.Utils;
 
 namespace WebApp.Repository;
 
@@ -15,11 +16,22 @@ public class StockRepository : IStockRepository
         _context = context;
     }
     
-    public async Task<List<Stock>> GetAllAsync()
+    public async Task<List<Stock>> GetAllAsync(QueryObject query)
     {
-        return await _context.Stock
+        // AsQueryable() tells EF Core to delay execution until a terminal operation (like ToList() or FirstOrDefault()) is called
+        // ToList() fires the SQL gun
+        // AsQueryable() = "Prepare this for dynamic building."
+        var stocks = _context.Stock
             .Include(comment => comment.Comments)
-            .ToListAsync();
+            .AsQueryable();
+            
+        if(!string.IsNullOrWhiteSpace(query.CompanyName))
+            stocks = stocks.Where(stock => stock.CompanyName.Contains(query.CompanyName));
+
+        if (!string.IsNullOrWhiteSpace(query.Symbol))
+            stocks = stocks.Where(stock => stock.Symbol.Contains(query.Symbol));
+        
+        return await stocks.ToListAsync();
     }
 
     public async Task<Stock?> GetByIdAsync(int id)

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApp.Dtos.Stock;
 using WebApp.Interfaces;
 using WebApp.Mappers;
+using WebApp.Utils;
 
 namespace WebApp.Controllers;
 
@@ -31,9 +32,9 @@ public class StockController : ControllerBase
     // I promise to give you a result later. -Task<>
     // I promise to give you an IActionResult result later. -Task<IActionResult>
     [HttpGet("")]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
     {
-        var stocks = await _repository.GetAllAsync();
+        var stocks = await _repository.GetAllAsync(query);
         var stockDtos = stocks.Select(stock => stock.ToStockDto());
         
         return Ok(stockDtos);
