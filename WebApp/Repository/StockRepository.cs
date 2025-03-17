@@ -42,7 +42,10 @@ public class StockRepository : IStockRepository
             _ => stocks
         };
         
-        return await stocks.ToListAsync();
+        return await stocks
+            .Skip((query.PageNumber - 1) * query.PageSize)
+            .Take(query.PageSize)
+            .ToListAsync();
     }
 
     public async Task<Stock?> GetByIdAsync(int id)
