@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApp.Models;
 
+[Table("Stock")]
 public class Stock
 {
     public int Id { get; set; }
@@ -12,5 +13,7 @@ public class Stock
     public decimal LastDiv { get; set; }
     public string Industry { get; set; } = string.Empty;
     public long MarketCap { get; set; }
+    
     public List<Comment> Comments { get; set; } = [];
+    public List<Portfolio> Portfolios { get; set; } = [];
 }

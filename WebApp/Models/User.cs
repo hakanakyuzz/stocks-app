@@ -1,5 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace WebApp.Models;
 
-public class User : IdentityUser { }
+[Table("User")]
+public class User : IdentityUser
+{
+    public List<Portfolio> Portfolios { get; set; } = [];
+}

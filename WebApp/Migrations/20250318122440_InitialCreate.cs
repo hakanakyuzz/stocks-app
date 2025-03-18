@@ -197,6 +197,30 @@ namespace WebApp.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Portfolio",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    StockId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Portfolio", x => new { x.UserId, x.StockId });
+                    table.ForeignKey(
+                        name: "FK_Portfolio_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Portfolio_Stock_StockId",
+                        column: x => x.StockId,
+                        principalTable: "Stock",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
@@ -273,6 +297,11 @@ namespace WebApp.Migrations
                 name: "IX_Comment_StockId",
                 table: "Comment",
                 column: "StockId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Portfolio_StockId",
+                table: "Portfolio",
+                column: "StockId");
         }
 
         /// <inheritdoc />
@@ -295,6 +324,9 @@ namespace WebApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "Comment");
+
+            migrationBuilder.DropTable(
+                name: "Portfolio");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

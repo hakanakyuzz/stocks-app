@@ -19,12 +19,29 @@ public class AppDbContext : IdentityDbContext<User>
     
     public DbSet<Stock> Stock { get; set; }
     public DbSet<Comment> Comment { get; set; }
+    public DbSet<Portfolio> Portfolio { get; set; }
 
     // Set up the database schema the way I want it
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // EF Core, go ahead and do your usual setup first
         base.OnModelCreating(modelBuilder);
+
+        // A user cannot hold the same stock more than once
+        // (UserId, StockId) is a unique combination in the table
+        modelBuilder.Entity<Portfolio>(x => x.HasKey(portfolio => new { portfolio.UserId, portfolio.StockId }));
+        
+        // A foreign key is a column in one table that points to the primary key in another table
+        
+        modelBuilder.Entity<Portfolio>()
+            .HasOne(portfolio => portfolio.User) // Portfolio belongs to one user
+            .WithMany(user => user.Portfolios) // A user can have many portfolios
+            .HasForeignKey(portfolio => portfolio.UserId); // Create the foreign key constraint
+        
+        modelBuilder.Entity<Portfolio>() 
+            .HasOne(portfolio => portfolio.Stock) // Portfolio belongs to one stock
+            .WithMany(stock => stock.Portfolios) // A stock can have many portfolios
+            .HasForeignKey(portfolio => portfolio.StockId); // Create the foreign key constraint
 
         // Roles : Labels for user permissions. Like admin, moderator, etc.
         // Identity Role : Represent a role in the system (like Admin, User, etc.)
