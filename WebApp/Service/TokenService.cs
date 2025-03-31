@@ -25,6 +25,8 @@ public class TokenService : ITokenService
         // A claim is a piece of information about a user that included in the token
         var claims = new List<Claim>
         {
+            // I add this to get the user id from token to find portfolio based on user id (to add seed data)
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
             new Claim(JwtRegisteredClaimNames.Email, user.Email!),
             new Claim(JwtRegisteredClaimNames.GivenName, user.UserName!)
         };

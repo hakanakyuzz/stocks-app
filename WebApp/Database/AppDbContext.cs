@@ -67,5 +67,6 @@ public class AppDbContext : IdentityDbContext<User>
         
         modelBuilder.ApplyConfiguration(new StockConfiguration());
         modelBuilder.ApplyConfiguration(new CommentConfiguration());
+        modelBuilder.ApplyConfiguration(new PortfolioConfiguration());
     }
 }

@@ -82,6 +82,7 @@ builder.Services.AddAuthentication(options =>
 // When the app needs IStockRepository, create a new instance of StockRepository, and reuse the same instance for the lifetime of the HTTP request.
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();

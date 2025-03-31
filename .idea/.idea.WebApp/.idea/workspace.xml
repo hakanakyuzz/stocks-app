@@ -8,16 +8,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f03e13e-ff12-451c-b13e-6cce17f04abc" name="Changes" comment="pagination handled">
-      <change afterPath="$PROJECT_DIR$/WebApp/Controllers/AccountController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Dtos/User/RegisterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApp/Models/User.cs" afterDir="false" />
+    <list default="true" id="8f03e13e-ff12-451c-b13e-6cce17f04abc" name="Changes" comment="many-to-many relationship is set between stocks and user through portfolio, a join table">
+      <change afterPath="$PROJECT_DIR$/WebApp/Configuration/PortfolioConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApp/Controllers/PortfolioController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApp/Dtos/Portofilo/PortfolioDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApp/Extensions/ClaimsExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApp/Interfaces/IPortfolioRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApp/Mappers/PortfolioMappers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApp/Repository/PortfolioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Database/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Database/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20250312090104_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20250312090104_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20250318122440_InitialCreate.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Models/Portfolio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Models/Portfolio.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/WebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/WebApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Service/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Service/TokenService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +46,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Database/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Migrations/20250312090104_InitialCreate.Designer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Repository/StockRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Repository/StockRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Utils/QueryObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/hakanakyuz/Desktop/dev/cSharp/WebApp/WebApp/Utils/QueryObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2bc11a42069f9763241157f68b3dffdebbffa5703fa240cd5ca89388b82222/UserManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a9cbd67f7625c30f13f88befb4f9401992e9351d9a43b90ef6817642bc940/PrincipalExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e096e6f12c5d6b49356bc34ff1ea08738f910c0929c9d717c9cba7f44288/EntityFrameworkQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -68,6 +69,12 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;,
+      &quot;sqlite&quot;
+    ]
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,7 +87,54 @@
       <updated>1742210408744</updated>
       <workItem from="1742210412440" duration="9766000" />
       <workItem from="1742278052358" duration="2000" />
+      <workItem from="1742278068942" duration="24746000" />
+      <workItem from="1742365352239" duration="1209000" />
+      <workItem from="1742544995361" duration="4782000" />
+      <workItem from="1742994071739" duration="2010000" />
+      <workItem from="1743059961604" duration="3000" />
+      <workItem from="1743410541061" duration="12909000" />
     </task>
+    <task id="LOCAL-00001" summary="user authentication and authorization handled">
+      <option name="closed" value="true" />
+      <created>1742284396962</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742284396962</updated>
+    </task>
+    <task id="LOCAL-00002" summary="user register handled">
+      <option name="closed" value="true" />
+      <created>1742288025501</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742288025501</updated>
+    </task>
+    <task id="LOCAL-00003" summary="generating jwt tokens handled when register">
+      <option name="closed" value="true" />
+      <created>1742297520645</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742297520645</updated>
+    </task>
+    <task id="LOCAL-00004" summary="login handled">
+      <option name="closed" value="true" />
+      <created>1742299636880</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742299636880</updated>
+    </task>
+    <task id="LOCAL-00005" summary="many-to-many relationship is set between stocks and user through portfolio, a join table">
+      <option name="closed" value="true" />
+      <created>1742304080388</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742304080388</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +144,11 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pagination handled" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination handled" />
+    <MESSAGE value="user authentication and authorization handled" />
+    <MESSAGE value="user register handled" />
+    <MESSAGE value="generating jwt tokens handled when register" />
+    <MESSAGE value="login handled" />
+    <MESSAGE value="many-to-many relationship is set between stocks and user through portfolio, a join table" />
+    <option name="LAST_COMMIT_MESSAGE" value="many-to-many relationship is set between stocks and user through portfolio, a join table" />
   </component>
 </project>

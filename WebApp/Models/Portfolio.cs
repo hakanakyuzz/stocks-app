@@ -10,6 +10,7 @@ public class Portfolio
     public int StockId { get; set; }
     
     // Foreign keys
+    // Navigation properties just for developers
     public User User { get; set; }
     public Stock Stock { get; set; }
 }

@@ -257,6 +257,38 @@ namespace WebApp.Migrations
                     b.HasIndex("StockId");
 
                     b.ToTable("Portfolio");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
+                            StockId = 1
+                        },
+                        new
+                        {
+                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
+                            StockId = 2
+                        },
+                        new
+                        {
+                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
+                            StockId = 3
+                        },
+                        new
+                        {
+                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
+                            StockId = 4
+                        },
+                        new
+                        {
+                            UserId = "587b02bf-1685-4e18-a527-32c88216e78c",
+                            StockId = 1
+                        },
+                        new
+                        {
+                            UserId = "587b02bf-1685-4e18-a527-32c88216e78c",
+                            StockId = 5
+                        });
                 });
 
             modelBuilder.Entity("WebApp.Models.Stock", b =>
