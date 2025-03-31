@@ -38,4 +38,18 @@ public class PortfolioRepository : IPortfolioRepository
         
         return portfolio;
     }
+
+    public async Task<Portfolio?> DeleteAsync(User user, string symbol)
+    {
+        var portfolioModel = await _context.Portfolio.FirstOrDefaultAsync(portfolio 
+            => portfolio.UserId == user.Id && portfolio.Stock.Symbol.ToLower() == symbol.ToLower());
+        
+        if (portfolioModel == null) 
+            return null;
+        
+        _context.Portfolio.Remove(portfolioModel);
+        await _context.SaveChangesAsync();
+        
+        return portfolioModel;
+    }
 }

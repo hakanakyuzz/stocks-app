@@ -22,6 +22,7 @@ public class PortfolioController : ControllerBase
         _stockRepository = stockRepository;
     }
 
+    // This route gets all stocks in a user portfolio
     [HttpGet("")]
     [Authorize]
     public async Task<IActionResult> GetAll()
@@ -33,13 +34,13 @@ public class PortfolioController : ControllerBase
         
         return Ok(userPortfolio);
     }
-
+    
+    // This route add a stock to user portfolio
     [HttpPost("")]
     [Authorize]
     public async Task<IActionResult> CreateAsync([FromQuery] string symbol)
     {
         var username = User.GetUserName();
-        
         var user = await _userManager.FindByNameAsync(username);
         var stock = await _stockRepository.GetBySymbolAsync(symbol);
 
@@ -59,6 +60,24 @@ public class PortfolioController : ControllerBase
         await _portfolioRepository.CreateAsync(portfolioModel);
         
         return Created();
+    }
+
+    // This route removes a stock from user portfolio
+    [HttpDelete]
+    [Authorize]
+    public async Task<IActionResult> DeleteAsync([FromQuery] string symbol)
+    {
+        var username = User.GetUserName();
+        var user = await _userManager.FindByNameAsync(username);
+        var userPortfolio = await _portfolioRepository.GetAllAsync(user);
+        
+        var stock = userPortfolio.Where(s => string.Equals(s.Symbol, symbol, StringComparison.CurrentCultureIgnoreCase));
+
+        if (!stock.Any())
+            return BadRequest("Cannot delete stock that is not in your portfolio!");
+        
+        await _portfolioRepository.DeleteAsync(user, symbol);
+        return Ok();
     }
 }
 

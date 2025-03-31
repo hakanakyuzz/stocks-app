@@ -8,15 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f03e13e-ff12-451c-b13e-6cce17f04abc" name="Changes" comment="get portfolio handled">
+    <list default="true" id="8f03e13e-ff12-451c-b13e-6cce17f04abc" name="Changes" comment="create portfolio handled">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Configuration/PortfolioConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Configuration/PortfolioConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PortfolioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PortfolioController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Interfaces/IPortfolioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Interfaces/IPortfolioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Interfaces/IStockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Interfaces/IStockRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Repository/PortfolioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/PortfolioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +126,7 @@
       <workItem from="1742544995361" duration="4782000" />
       <workItem from="1742994071739" duration="2010000" />
       <workItem from="1743059961604" duration="3000" />
-      <workItem from="1743410541061" duration="19395000" />
+      <workItem from="1743410541061" duration="22651000" />
     </task>
     <task id="LOCAL-00001" summary="user authentication and authorization handled">
       <option name="closed" value="true" />
@@ -180,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743432275242</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create portfolio handled">
+      <option name="closed" value="true" />
+      <created>1743442626144</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743442626144</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +200,7 @@
     <MESSAGE value="login handled" />
     <MESSAGE value="many-to-many relationship is set between stocks and user through portfolio, a join table" />
     <MESSAGE value="get portfolio handled" />
-    <option name="LAST_COMMIT_MESSAGE" value="get portfolio handled" />
+    <MESSAGE value="create portfolio handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="create portfolio handled" />
   </component>
 </project>
