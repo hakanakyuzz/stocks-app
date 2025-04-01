@@ -20,12 +20,16 @@ public class CommentRepository : ICommentRepository
     public async Task<List<Comment>> GetAllAsync()
     {
         // _context.Comment represents the Comment table in the database
-        return await _context.Comment.ToListAsync();
+        return await _context.Comment
+            .Include(comment => comment.User)
+            .ToListAsync();
     }
 
     public async Task<Comment?> GetByIdAsync(int id)
     {
-        var commentModel = await _context.Comment.FirstOrDefaultAsync(comment => comment.Id == id);
+        var commentModel = await _context.Comment
+            .Include(comment => comment.User)
+            .FirstOrDefaultAsync(comment => comment.Id == id);
 
         return commentModel ?? null;
     }

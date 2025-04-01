@@ -179,69 +179,17 @@ namespace WebApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("StockId");
 
-                    b.ToTable("Comment");
+                    b.HasIndex("UserId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Content = "Apple's recent earnings report exceeded expectations.",
-                            CreatedOn = new DateTime(2020, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 1,
-                            Title = "Strong Performance"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Content = "Microsoft continues to show strong revenue growth in cloud services.",
-                            CreatedOn = new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 2,
-                            Title = "Consistent Growth"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Content = "Tesla's stock is overvalued according to analysts.",
-                            CreatedOn = new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 3,
-                            Title = "High Valuation"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Content = "Alphabet's AI initiatives are expected to drive future growth.",
-                            CreatedOn = new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 4,
-                            Title = "Innovative Push"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Content = "Amazon dominates the e-commerce market, but faces supply chain challenges.",
-                            CreatedOn = new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 5,
-                            Title = "Market Leader"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Content = "Apple's move into VR is exciting for the future.",
-                            CreatedOn = new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 1,
-                            Title = "Future Prospects"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Content = "Microsoft Azure is outperforming competitors.",
-                            CreatedOn = new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            StockId = 2,
-                            Title = "Cloud Strength"
-                        });
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("WebApp.Models.Portfolio", b =>
@@ -257,38 +205,6 @@ namespace WebApp.Migrations
                     b.HasIndex("StockId");
 
                     b.ToTable("Portfolio");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
-                            StockId = 1
-                        },
-                        new
-                        {
-                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
-                            StockId = 2
-                        },
-                        new
-                        {
-                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
-                            StockId = 3
-                        },
-                        new
-                        {
-                            UserId = "0aa2dc49-2fb8-4355-97e8-6048b21f4bfe",
-                            StockId = 4
-                        },
-                        new
-                        {
-                            UserId = "587b02bf-1685-4e18-a527-32c88216e78c",
-                            StockId = 1
-                        },
-                        new
-                        {
-                            UserId = "587b02bf-1685-4e18-a527-32c88216e78c",
-                            StockId = 5
-                        });
                 });
 
             modelBuilder.Entity("WebApp.Models.Stock", b =>
@@ -496,7 +412,15 @@ namespace WebApp.Migrations
                         .WithMany("Comments")
                         .HasForeignKey("StockId");
 
+                    b.HasOne("WebApp.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Stock");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WebApp.Models.Portfolio", b =>

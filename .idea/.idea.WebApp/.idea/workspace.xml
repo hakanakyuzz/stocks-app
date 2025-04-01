@@ -8,11 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f03e13e-ff12-451c-b13e-6cce17f04abc" name="Changes" comment="create portfolio handled">
+    <list default="true" id="8f03e13e-ff12-451c-b13e-6cce17f04abc" name="Changes" comment="delete a stock from user portfolio handled">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PortfolioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PortfolioController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Interfaces/IPortfolioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Interfaces/IPortfolioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Repository/PortfolioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/PortfolioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/CommentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/CommentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Database/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Database/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Dtos/Comment/CommentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Dtos/Comment/CommentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Mappers/CommentMappers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Mappers/CommentMappers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20250331114441_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/20250331115047_SeedPortfolioData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Models/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Repository/CommentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/CommentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Repository/StockRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,25 +76,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.WebApp Debug.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.WebApp Debug.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver",
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;,
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="WebApp Debug" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/WebApp/bin/Debug/net9.0/WebApp" />
@@ -126,7 +133,8 @@
       <workItem from="1742544995361" duration="4782000" />
       <workItem from="1742994071739" duration="2010000" />
       <workItem from="1743059961604" duration="3000" />
-      <workItem from="1743410541061" duration="22651000" />
+      <workItem from="1743410541061" duration="23732000" />
+      <workItem from="1743488388747" duration="2816000" />
     </task>
     <task id="LOCAL-00001" summary="user authentication and authorization handled">
       <option name="closed" value="true" />
@@ -184,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743442626144</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="delete a stock from user portfolio handled">
+      <option name="closed" value="true" />
+      <created>1743446983325</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743446983325</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +217,7 @@
     <MESSAGE value="many-to-many relationship is set between stocks and user through portfolio, a join table" />
     <MESSAGE value="get portfolio handled" />
     <MESSAGE value="create portfolio handled" />
-    <option name="LAST_COMMIT_MESSAGE" value="create portfolio handled" />
+    <MESSAGE value="delete a stock from user portfolio handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete a stock from user portfolio handled" />
   </component>
 </project>

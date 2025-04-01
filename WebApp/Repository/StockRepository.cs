@@ -23,6 +23,7 @@ public class StockRepository : IStockRepository
         // AsQueryable() = "Prepare this for dynamic building."
         var stocks = _context.Stock
             .Include(comment => comment.Comments)
+            .ThenInclude(comment => comment.User)
             .AsQueryable();
             
         if(!string.IsNullOrWhiteSpace(query.CompanyName))

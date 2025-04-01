@@ -185,11 +185,18 @@ namespace WebApp.Migrations
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     Content = table.Column<string>(type: "TEXT", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    StockId = table.Column<int>(type: "INTEGER", nullable: true)
+                    StockId = table.Column<int>(type: "INTEGER", nullable: true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comment", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Comment_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Comment_Stock_StockId",
                         column: x => x.StockId,
@@ -242,20 +249,6 @@ namespace WebApp.Migrations
                     { 5, "Amazon.com Inc.", "E-Commerce", 0.00m, 1700000000000L, 3450.60m, "AMZN" }
                 });
 
-            migrationBuilder.InsertData(
-                table: "Comment",
-                columns: new[] { "Id", "Content", "CreatedOn", "StockId", "Title" },
-                values: new object[,]
-                {
-                    { 1, "Apple's recent earnings report exceeded expectations.", new DateTime(2020, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 1, "Strong Performance" },
-                    { 2, "Microsoft continues to show strong revenue growth in cloud services.", new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, "Consistent Growth" },
-                    { 3, "Tesla's stock is overvalued according to analysts.", new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 3, "High Valuation" },
-                    { 4, "Alphabet's AI initiatives are expected to drive future growth.", new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 4, "Innovative Push" },
-                    { 5, "Amazon dominates the e-commerce market, but faces supply chain challenges.", new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 5, "Market Leader" },
-                    { 6, "Apple's move into VR is exciting for the future.", new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 1, "Future Prospects" },
-                    { 7, "Microsoft Azure is outperforming competitors.", new DateTime(2025, 3, 11, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, "Cloud Strength" }
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -297,6 +290,11 @@ namespace WebApp.Migrations
                 name: "IX_Comment_StockId",
                 table: "Comment",
                 column: "StockId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comment_UserId",
+                table: "Comment",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Portfolio_StockId",

@@ -66,7 +66,7 @@ public class AppDbContext : IdentityDbContext<User>
         modelBuilder.Entity<IdentityRole>().HasData(roles);
         
         modelBuilder.ApplyConfiguration(new StockConfiguration());
-        modelBuilder.ApplyConfiguration(new CommentConfiguration());
-        modelBuilder.ApplyConfiguration(new PortfolioConfiguration());
+        // modelBuilder.ApplyConfiguration(new CommentConfiguration());
+        // modelBuilder.ApplyConfiguration(new PortfolioConfiguration());
     }
 }

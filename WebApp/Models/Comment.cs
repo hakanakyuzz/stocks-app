@@ -11,4 +11,8 @@ public class Comment
     public DateTime CreatedOn { get; set; } = DateTime.Now;
     public int? StockId { get; set; }
     public Stock? Stock { get; set; }
+    public string UserId { get; set; }
+    
+    // Navigation property
+    public User User { get; set; }
 }
